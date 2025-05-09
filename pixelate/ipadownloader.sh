@@ -18,7 +18,7 @@ echo "✅ Created required folders."
 echo "⬇️ Downloading Checkpoint models..."
 
 declare -A checkpoint_models=(
-    ["https://huggingface.co/dfsdsdfsdfsdfsdfsdfsdf/pixel/resolve/main/pixel-art-xl-v1.1.safetensors?download=true"]="pixel-art-xl-v1.1.safetensors"
+    ["https://huggingface.co/dfsdsdfsdfsdfsdfsdfsdf/pixel/resolve/main/pixel-art-xl-v1.1.safetensors"]="pixel-art-xl-v1.1.safetensors"
 )
 
 for url in "${!checkpoint_models[@]}"; do
@@ -35,8 +35,8 @@ echo "✅ Checkpoint models downloaded."
 echo "⬇️ Downloading Lora models..."
 
 declare -A lora_models=(
-    ["https://huggingface.co/nerijs/pixel-art-xl/resolve/main/pixel-art-xl.safetensors?download=true"]="pixel-art-xl.safetensors"
-    ["https://huggingface.co/dfsdsdfsdfsdfsdfsdfsdf/pixel/resolve/main/pixel-art-xl-v1.1.safetensors?download=true"]="pixel-art-xl-v1.1.safetensors"
+    ["https://huggingface.co/nerijs/pixel-art-xl/resolve/main/pixel-art-xl.safetensors"]="pixel-art-xl.safetensors"
+    ["https://huggingface.co/dfsdsdfsdfsdfsdfsdfsdf/pixel/resolve/main/pixel-art-xl-v1.1.safetensors"]="pixel-art-xl-v1.1.safetensors"
 )
 
 for url in "${!lora_models[@]}"; do
