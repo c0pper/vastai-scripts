@@ -18,7 +18,7 @@ echo "✅ Created required folders."
 echo "⬇️ Downloading Checkpoint models..."
 
 declare -A checkpoint_models=(
-    ["https://huggingface.co/dfsdsdfsdfsdfsdfsdfsdf/pixel/resolve/main/pixel-art-xl-v1.1.safetensors"]="pixel-art-xl-v1.1.safetensors"
+    ["https://huggingface.co/autismanon/modeldump/resolve/main/aziibpixelmix_v10.safetensors"]="aziibpixelmix_v10.safetensors"
 )
 
 for url in "${!checkpoint_models[@]}"; do
