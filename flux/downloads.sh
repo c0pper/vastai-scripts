@@ -62,7 +62,7 @@ fi
 
 if [ "$DL_FLUX1KONTEXT" -eq 1 ]; then
     wget --no-clobber -P /workspace/ComfyUI/models/unet \
-    https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors
+    https://huggingface.co/Comfy-Org/flux1-kontext-dev_ComfyUI/resolve/main/split_files/diffusion_models/flux1-dev-kontext_fp8_scaled.safetensors
 fi
 
 
