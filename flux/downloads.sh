@@ -1,13 +1,32 @@
 #!/bin/bash
 
-# Toggle switches (1 = download, 0 = skip)
-DL_T5XXL=1
-DL_CLIP_L=1
-DL_VAE=1
-DL_CONTROLNET=1
-DL_UPSCALE=1
+echo "==== ComfyUI FLUX Download Script ===="
+echo "Type 'y' to download, or any other key to skip."
 
-# Download paths and URLs
+# Ask user input for each model
+read -p "Download T5XXL? (y/N): " yn
+DL_T5XXL=0; [[ "$yn" == [Yy] ]] && DL_T5XXL=1
+
+read -p "Download CLIP_L? (y/N): " yn
+DL_CLIP_L=0; [[ "$yn" == [Yy] ]] && DL_CLIP_L=1
+
+read -p "Download VAE? (y/N): " yn
+DL_VAE=0; [[ "$yn" == [Yy] ]] && DL_VAE=1
+
+read -p "Download ControlNet? (y/N): " yn
+DL_CONTROLNET=0; [[ "$yn" == [Yy] ]] && DL_CONTROLNET=1
+
+read -p "Download Upscale Model? (y/N): " yn
+DL_UPSCALE=0; [[ "$yn" == [Yy] ]] && DL_UPSCALE=1
+
+read -p "Download FLUX1-DEV UNet? (y/N): " yn
+DL_FLUX1DEV=0; [[ "$yn" == [Yy] ]] && DL_FLUX1DEV=1
+
+echo ""
+echo "Starting downloads..."
+echo ""
+
+# Downloads
 if [ "$DL_T5XXL" -eq 1 ]; then
     wget -P /workspace/ComfyUI/models/clip \
     https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors
@@ -32,3 +51,11 @@ if [ "$DL_UPSCALE" -eq 1 ]; then
     wget -P /workspace/ComfyUI/models/upscale_models \
     https://huggingface.co/skbhadra/ClearRealityV1/resolve/bc01e27b38eec683dc6e3161dd56069c78e015ac/4x-ClearRealityV1.pth
 fi
+
+if [ "$DL_FLUX1DEV" -eq 1 ]; then
+    wget -P /workspace/ComfyUI/models/unet \
+    https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors
+fi
+
+echo ""
+echo "✅
