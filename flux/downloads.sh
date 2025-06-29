@@ -22,6 +22,9 @@ DL_UPSCALE=0; [[ "$yn" == [Yy] ]] && DL_UPSCALE=1
 read -p "Download FLUX1-DEV UNet? (y/N): " yn
 DL_FLUX1DEV=0; [[ "$yn" == [Yy] ]] && DL_FLUX1DEV=1
 
+read -p "Download FLUX1-KONTEXT UNet? (y/N): " yn
+DL_FLUX1KONTEXT=0; [[ "$yn" == [Yy] ]] && DL_FLUX1KONTEXT=1
+
 echo ""
 echo "Starting downloads..."
 echo ""
@@ -56,6 +59,12 @@ if [ "$DL_FLUX1DEV" -eq 1 ]; then
     wget --no-clobber -P /workspace/ComfyUI/models/unet \
     https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors
 fi
+
+if [ "$DL_FLUX1KONTEXT" -eq 1 ]; then
+    wget --no-clobber -P /workspace/ComfyUI/models/unet \
+    https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors
+fi
+
 
 echo ""
 echo "✅
