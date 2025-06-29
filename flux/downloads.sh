@@ -67,4 +67,4 @@ fi
 
 
 echo ""
-echo "✅
+echo "✅"
